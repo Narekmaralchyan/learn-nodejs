@@ -6,7 +6,7 @@ export function jsonBodyParser (req,res,next){
         })
         req.on('end',()=>{
             try {
-                req.aaa = JSON.parse(body);
+                req.body = JSON.parse(body);
             } catch {
                 res.writeHead(400,{ 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ error: 'Invalid JSON format' }))
