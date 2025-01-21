@@ -14,6 +14,12 @@ export class Todo {
     unCompleteTodo (){
         this.completed = false;
     }
+    updateTodoTitle (title) {
+        if (!title) {
+            throw new Error('title cant be empty')
+        }
+        this.title = title
+    }
 }
 
 export class Todos {
